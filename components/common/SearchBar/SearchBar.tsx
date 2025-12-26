@@ -23,7 +23,7 @@ const SearchBar = ({ placeholder }: Args) => {
     replace(`${pathname}?${params.toString()}`);
   }, 500);
   return (
-    <div>
+    <div className="w-full md:w-auto">
       <input
         type="search"
         className="block w-full px-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 outline-none"
