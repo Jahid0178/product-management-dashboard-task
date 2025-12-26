@@ -1,5 +1,7 @@
 import { ProductResponse, Product } from "@/typescript/interface";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL as string;
+
 export const getProducts = async (
   query: string,
   category?: string,
@@ -7,7 +9,7 @@ export const getProducts = async (
   page: number = 1
 ): Promise<ProductResponse<Product[]>> => {
   const skip = (Math.max(1, page) - 1) * limit;
-  let url = "https://dummyjson.com/products";
+  let url = `${BASE_URL}/products`;
 
   if (category) {
     url += `/category/${category}?limit=${limit}&skip=${skip}`;
@@ -35,7 +37,7 @@ export const getProductCategories = async (): Promise<
     url: string;
   }[]
 > => {
-  const response = await fetch("https://dummyjson.com/products/categories", {
+  const response = await fetch(`${BASE_URL}/products/categories`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -46,7 +48,7 @@ export const getProductCategories = async (): Promise<
 };
 
 export const getProductById = async (id: string): Promise<Product> => {
-  const response = await fetch(`https://dummyjson.com/products/${id}`, {
+  const response = await fetch(`${BASE_URL}/products/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
