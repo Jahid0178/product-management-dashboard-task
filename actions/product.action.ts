@@ -44,3 +44,14 @@ export const getProductCategories = async (): Promise<
   });
   return await response.json();
 };
+
+export const getProductById = async (id: string): Promise<Product> => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "no-store",
+  });
+  return await response.json();
+};
