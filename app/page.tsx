@@ -32,10 +32,10 @@ export default async function ProductsPage({ searchParams }: Args) {
   );
 
   return (
-    <section className="min-h-[calc(100vh-4rem)] bg-blue-50 p-4">
+    <section className="min-h-[calc(100vh-4rem)] bg-blue-50 p-4 overflow-x-hidden">
       <div className="space-y-4 mb-8">
         <h1 className="text-2xl font-bold">Products</h1>
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <SearchBar placeholder="Search by product title" />
           <ProductFilters categories={categories} />
         </div>

@@ -26,7 +26,7 @@ const ProductFilters = ({ categories }: Args) => {
   };
   return (
     <select
-      className="px-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 outline-none"
+      className="w-full md:w-auto px-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 outline-none"
       onChange={handleSelect}
     >
       <option value="">All Categories</option>
