@@ -51,19 +51,26 @@ The DummyJSON API does not currently support combining `search` and `category` f
     cd product-management-dashboard-task
     ```
 
-2.  **Install dependencies**:
+2.  **Set up environment variables**:
+    Create a `.env` file in the root directory and add the following:
+
+    ```env
+    NEXT_PUBLIC_API_BASE_URL=[https://dummyjson.com](https://dummyjson.com)
+    ```
+
+3.  **Install dependencies**:
 
     ```bash
     npm install
     ```
 
-3.  **Run the development server**:
+4.  **Run the development server**:
 
     ```bash
     npm run dev
     ```
 
-4.  **Open the app**:
+5.  **Open the app**:
     Navigate to [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ---
