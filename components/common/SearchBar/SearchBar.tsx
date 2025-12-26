@@ -14,6 +14,7 @@ const SearchBar = ({ placeholder }: Args) => {
 
   const handleSearch = useDebounceFunction((term: string) => {
     const params = new URLSearchParams(searchParams);
+    params.set("page", "1");
     if (term) {
       params.set("query", term.trim());
     } else {
@@ -24,7 +25,7 @@ const SearchBar = ({ placeholder }: Args) => {
   return (
     <div>
       <input
-        type="text"
+        type="search"
         className="block w-full px-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 outline-none"
         placeholder={placeholder}
         onChange={(e) => handleSearch(e.target.value)}

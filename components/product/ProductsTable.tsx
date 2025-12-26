@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getProducts } from "@/actions/product.action";
+import { Product } from "@/typescript/interface";
 
 interface Args {
-  query: string;
+  products: Product[];
 }
 
-const ProductsTable = async ({ query }: Args) => {
-  const { products } = await getProducts(query);
+const ProductsTable = async ({ products }: Args) => {
   return (
     <table className="table-auto border-collapse border border-gray-200 min-w-full bg-white">
       <thead>
